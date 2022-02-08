@@ -6,13 +6,7 @@ const App = () => {
     const [query, setQuery] = useState('harry potter and in a');
     const [pageNumber, setPageNumber] = useState(1);
     const { isLoading, titles, hasMore, error } = useGetTitles(query, pageNumber);
-    const {setRef} = useInfinitePagination(setPageNumber, hasMore);
-
-    const onLoadMore = () => {
-        setPageNumber(pageNumber + 1);
-    };
-
-    console.log({isLoading});
+    const {setRef} = useInfinitePagination(setPageNumber, hasMore, isLoading);
 
     return (
         <div>
