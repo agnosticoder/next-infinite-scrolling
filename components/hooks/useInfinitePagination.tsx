@@ -1,6 +1,9 @@
+import { Dispatch, SetStateAction } from "react";
+
 const { useRef, useEffect, useState } = require('react');
 
-const useInfinitePagination = (setPageNumber, hasMore, isLoading) => {
+
+const useInfinitePagination = (setPageNumber:Dispatch<SetStateAction<number>>, hasMore:boolean, isLoading:boolean) => {
     // const ref = useRef();
     const [ref, setRef] = useState();
 
@@ -27,7 +30,7 @@ const useInfinitePagination = (setPageNumber, hasMore, isLoading) => {
                 observer.disconnect();
             }
         };
-    }, [ref, hasMore, isLoading]);
+    }, [ref, hasMore, isLoading, setPageNumber]);
 
     return { ref, setRef };
 };

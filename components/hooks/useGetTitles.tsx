@@ -1,10 +1,10 @@
-import useFetch from './useFetch.js'
-import filter from '../../lib/filter.js';
-import { useEffect, useMemo, useState } from 'react';
+import useFetch from './useFetch'
+import filter from '../../lib/filter';
+import { useEffect, useState } from 'react';
 
-const useGetTitles = (query, pageNumber) => {
-    const [titles, setTitles] = useState([]);
-    const [hasMore, setHasMore] = useState(true);
+const useGetTitles = (query:string, pageNumber: number) => {
+    const [titles, setTitles] = useState<string[]>([]);
+    const [hasMore, setHasMore] = useState<boolean>(true);
 
     const url = `https://openlibrary.org/search.json?q=${query}&page=${pageNumber}`;
     const [isLoading, error, data] = useFetch(url);

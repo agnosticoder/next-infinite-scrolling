@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import useGetTitles from './hooks/useGetTitles.js';
-import useInfinitePagination from './hooks/useInfinitePagination.js';
+import useGetTitles from './hooks/useGetTitles';
+import useInfinitePagination from './hooks/useInfinitePagination';
 
 const App = () => {
     const [query, setQuery] = useState('harry potter and in a');
